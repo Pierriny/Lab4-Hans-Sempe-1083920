@@ -10,19 +10,19 @@ namespace HEAP.TreeStructure
 
         public V Valor { get; set; }
 
-        public HEAPNode<P, V> Left { get; set; }
+        public HEAPNode<P, V> IZQ { get; set; }
 
-        public HEAPNode<P, V> Right { get; set; }
+        public HEAPNode<P, V> DER { get; set; }
 
-        public HEAPNode<P, V> Parent { get; set; }
+        public HEAPNode<P, V> PADRE { get; set; }
 
         public HEAPNode(P prioridad, V valor)
         {
             this.Prioridad = prioridad;
             this.Valor = valor;
-            this.Left = null;
-            this.Right = null;
-            this.Parent = null;
+            this.IZQ = null;
+            this.DER = null;
+            this.PADRE = null;
         }
 
     }

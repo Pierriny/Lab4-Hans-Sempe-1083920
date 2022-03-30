@@ -1,0 +1,10 @@
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\bin\Debug\netcoreapp3.1\HEAP.deps.json
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\bin\Debug\netcoreapp3.1\HEAP.dll
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\bin\Debug\netcoreapp3.1\HEAP.pdb
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.csproj.AssemblyReference.cache
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.AssemblyInfoInputs.cache
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.AssemblyInfo.cs
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.csproj.CoreCompileInputs.cache
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.dll
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\HEAP\HEAP\obj\Debug\netcoreapp3.1\HEAP.pdb

@@ -26,16 +26,13 @@ namespace HEAP.TreeStructure
         // calcula la altura del arbol
         private int calcularAlturaT(HEAPNode<P, V> raiz)
         {
-            if(raiz == null)
-            {
-                return 0;
-            }
+            if(raiz == null) { return 0; }
             else
             {
-                int alturaIzq = calcularAlturaT(raiz.Left);
-                int alturaDer = calcularAlturaT(raiz.Right);
-                if (alturaIzq > alturaDer){ return (alturaIzq + 1); }
-                else { return (alturaDer + 1); }
+                int alturaIzq = calcularAlturaT(raiz.IZQ);
+                int alturaDer = calcularAlturaT(raiz.DER);
+                if (alturaIzq < alturaDer) { return (alturaDer + 1); }
+                else { return (alturaIzq + 1); }
             }
         }
 
@@ -46,8 +43,8 @@ namespace HEAP.TreeStructure
             if (nivel == 1) { listaNodo.Add(raiz); }
             else
             {
-                Nivel(raiz.Left, nivel - 1, listaNodo);
-                Nivel(raiz.Right, nivel - 1, listaNodo);
+                Nivel(raiz.DER, nivel - 1, listaNodo);
+                Nivel(raiz.IZQ, nivel - 1, listaNodo);       
             }
         }
 
@@ -75,38 +72,32 @@ namespace HEAP.TreeStructure
             hijo.Valor = padreValor;
         }
 
-        public HEAPNode<P, V> CheckSwapDelete(HEAPNode<P, V> padre,HEAPNode<P, V> hijo)
-        {
-            if (compPrioridad(padre.Prioridad, hijo.Prioridad) < 0) { SWAP(ref padre, ref hijo); }
-            return padre;
-        }
-
         // declara el nivel de prioridad de cada nodo del arbol HEAP
         public void priorizarHEAP(HEAPNode<P, V> raiz)
         {
-            if (raiz.Left == null)
+            if (raiz.IZQ == null)
             {
                 this.Raiz = raiz;
                 return;
             }
             else
             {
-                if (raiz.Right == null)
+                if (raiz.DER == null)
                 {
-                    raiz = CheckSwapDelete(raiz, raiz.Left);
-                    priorizarHEAP(raiz.Left);
+                    raiz = CheckSwapDelete(raiz, raiz.IZQ);
+                    priorizarHEAP(raiz.DER);
                 }
                 else
                 {
-                    if (compPrioridad(raiz.Left.Prioridad, raiz.Right.Prioridad) > 0)
+                    if (compPrioridad(raiz.IZQ.Prioridad, raiz.DER.Prioridad) > 0)
                     {
-                        raiz = CheckSwapDelete(raiz, raiz.Left);
-                        priorizarHEAP(raiz.Left);
+                        raiz = CheckSwapDelete(raiz, raiz.IZQ);
+                        priorizarHEAP(raiz.IZQ);
                     }
                     else
                     {
-                        raiz = CheckSwapDelete(raiz, raiz.Right);
-                        priorizarHEAP(raiz.Right);
+                        raiz = CheckSwapDelete(raiz, raiz.DER);
+                        priorizarHEAP(raiz.DER);
                     }
                 }
             }
@@ -116,25 +107,26 @@ namespace HEAP.TreeStructure
         public void Eliminar()
         {
             HEAPNode<P, V> raiz = this.Raiz;
-            bool Left = true;
+            bool izq = true;
             String binaryCount = Convert.ToString(count + 1, 2);
 
             for (int i = 1; i < binaryCount.Length; i++)
             {
-                if (binaryCount[i] == '0') { raiz = raiz.Left; }
+                if (binaryCount[i] == '0') { raiz = raiz.IZQ; }
                 else
                 {
-                    raiz = raiz.Right;
-                    Left = false;
+                    raiz = raiz.DER;
+                    izq = false;
                 }
             }
             this.Raiz.Prioridad = raiz.Prioridad;
             this.Raiz.Valor = raiz.Valor;
-            if (Left) { raiz.Parent.Left = null; }
-            else { raiz.Parent.Parent.Right = null; }
+            if (izq) { raiz.PADRE.IZQ = null; }
+            else { raiz.PADRE.PADRE.DER = null; }
             priorizarHEAP(this.Raiz);
         }
 
+        // inserta el nivel de prioridad
         public HEAPNode<P, V> InsertarPrioridad(HEAPNode<P, V> raiz, V item)
         {
             if (raiz == null)
@@ -145,30 +137,30 @@ namespace HEAP.TreeStructure
             else
             {
                 String binaryCount = Convert.ToString(count + 1, 2);
-                bool Left = true;
+                bool izq = true;
                 for (int i = 1; i < binaryCount.Length; i++)
                 {
                     if (binaryCount[i] == '0')
                     {
-                        if (raiz.Left == null)
+                        if (raiz.IZQ == null)
                         {
-                            raiz.Left = InsertarPrioridad(raiz.Left, item);
-                            raiz.Left.Parent = raiz;
+                            raiz.IZQ = InsertarPrioridad(raiz.IZQ, item);
+                            raiz.IZQ.PADRE = raiz;
                         }
-                        raiz = raiz.Left;
+                        raiz = raiz.IZQ;
                     }
                     else
                     {
-                        if (raiz.Right == null)
+                        if (raiz.DER == null)
                         {
-                            raiz.Right = InsertarPrioridad(raiz.Right, item);
-                            raiz.Right.Parent = raiz;
+                            raiz.DER = InsertarPrioridad(raiz.DER, item);
+                            raiz.DER.PADRE = raiz;
                         }
-                        raiz = raiz.Right;
+                        raiz = raiz.DER;
                     }
                 }
-                if (Left) { raiz = CheckSwapDelete(raiz, raiz.Left); }
-                else { raiz = CheckSwapDelete(raiz, raiz.Right); }
+                if (izq) { raiz = CheckSwapDelete(raiz, raiz.IZQ); }
+                else { raiz = CheckSwapDelete(raiz, raiz.DER); }
                 count++;
             }
 
@@ -178,14 +170,22 @@ namespace HEAP.TreeStructure
         // inserta un valor al arbol
         public void Insertar(V item) { this.Raiz = InsertarPrioridad(this.Raiz, item); }
 
+        // chequea si es posible hacer una eliminacion en el swap
+        public HEAPNode<P, V> CheckSwapDelete(HEAPNode<P, V> padre, HEAPNode<P, V> hijo)
+        {
+            if (compPrioridad(padre.Prioridad, hijo.Prioridad) < 0) { SWAP(ref padre, ref hijo); }
+            return padre;
+        }
+
+        // chequea si es posible hacer una insercion en el swap
         public HEAPNode<P, V> CheckSwapInsert(HEAPNode<P, V> padre, HEAPNode<P, V> hijo)
         {
-            if(padre.Parent != null)
+            if(padre.PADRE != null)
             {
                 if (compPrioridad(padre.Prioridad, hijo.Prioridad) < 0)
                 {
                     SWAP(ref padre, ref hijo);
-                    CheckSwapInsert(padre.Parent, padre);
+                    CheckSwapInsert(padre.PADRE, padre);
                 }
             }
             return padre;

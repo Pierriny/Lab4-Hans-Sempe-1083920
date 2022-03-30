@@ -5,4 +5,12 @@
     <RootNamespace>Lab4_Hans_Sempe_1083920</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HEAP\HEAP\HEAP.csproj" />
+  </ItemGroup>
+
 </Project>
