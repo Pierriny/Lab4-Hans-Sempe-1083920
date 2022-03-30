@@ -48,7 +48,11 @@ namespace Lab4_Hans_Sempe_1083920.Controllers
             return View();
         }
 
-
-
+        public IActionResult MostrarColaPacientes (int b)
+        {
+            if ( b != 0) { ColaDeEspera.Eliminar(); }
+            ViewData["Pacientes"] = ColaDeEspera.treeToList();
+            return View();
+        }
     }
 }
