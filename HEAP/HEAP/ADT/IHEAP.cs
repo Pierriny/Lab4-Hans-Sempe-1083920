@@ -8,7 +8,7 @@ namespace HEAP.ADT
     // V para simbolizar Valor
     public delegate int ComparadorPrioridadDelegate<P>(P p1, P p2);
     public delegate P CalcularNivelPrioridadDelegatez<P, V>(V value);
-    public class IHEAP<P, V>
+    interface IHEAP<P, V>
     {
         void Insertar(V item);
 
