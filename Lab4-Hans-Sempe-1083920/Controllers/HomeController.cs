@@ -41,16 +41,16 @@ namespace Lab4_Hans_Sempe_1083920.Controllers
 
         public IActionResult RecibirUnPaciente() { return View(); }
 
-        public IActionResult GuardarPacienteEnCola (String _n, String _a, DateTime _f, int _s, int _e, int _i)
+        public IActionResult GuardarPacienteEnCola (String nombre, String apellido, DateTime fecha, int sexo, int especialidad, int ingreso)
         {
-            Pacientes nuevoPaciente = new Pacientes(_n, _a, _f, _s, _e, _i);
+            Pacientes nuevoPaciente = new Pacientes(nombre, apellido, fecha, sexo, especialidad, ingreso);
             ColaDeEspera.Insertar(nuevoPaciente);
             return View();
         }
 
-        public IActionResult MostrarColaPacientes (int b)
+        public IActionResult MostrarColaPacientes (int eliminacion)
         {
-            if ( b != 0) { ColaDeEspera.Eliminar(); }
+            if ( eliminacion != 0) { ColaDeEspera.Eliminar(); }
             ViewData["Pacientes"] = ColaDeEspera.treeToList();
             return View();
         }
