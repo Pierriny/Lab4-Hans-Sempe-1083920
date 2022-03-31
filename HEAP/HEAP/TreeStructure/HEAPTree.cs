@@ -138,7 +138,7 @@ namespace HEAP.TreeStructure
             this.Raiz.Prioridad = raiz.Prioridad;
             this.Raiz.Valor = raiz.Valor;
             if (izq) { raiz.PADRE.IZQ = null; }
-            else { raiz.PADRE.PADRE.DER = null; }
+            else { raiz.PADRE.DER = null; }
             count--;
             priorizarHEAP(this.Raiz);
         }

@@ -49,7 +49,15 @@ namespace Lab4_Hans_Sempe_1083920.Controllers
         }
 
         public IActionResult MostrarColaPacientes ()
-        { 
+        {
+            ViewData["Pacientes"] = ColaDeEspera.treeToList();
+            return View();
+        }
+
+        public IActionResult Eliminacion()
+        {
+            ColaDeEspera.Eliminar();
+            ViewData["Pacientes"] = ColaDeEspera.treeToList();
             return View();
         }
 

@@ -1,0 +1,28 @@
+﻿@model Lab4_Hans_Sempe_1083920.Models.Pacientes
+
+@{
+    ViewData["Title"] = "Eliminacion";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4"><u>Cola Actualizada</u></h1>
+</div>
+
+<hr />
+
+<div class="text-center">
+    <br />
+    <a class="button text-white btn btn-success" asp-action="Index">Volver al menú</a>
+    <br />
+    <br />
+    <a class="button text-white btn btn-success" asp-action="RecibirUnPaciente">Registrar un nuevo paciente</a>
+    <br />
+    <br />
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
