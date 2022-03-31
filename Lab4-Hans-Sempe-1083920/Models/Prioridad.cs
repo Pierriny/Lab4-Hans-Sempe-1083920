@@ -26,14 +26,13 @@ namespace Lab4_Hans_Sempe_1083920.Models
         private int PrioridadPorEdad(Pacientes x)
         {
             int P_edad = 0;
-            DateTime Hoy = DateTime.Now;
-            int CantAños = Hoy.Year - x.Fnacimiento.DayOfYear;
-            if (Hoy.DayOfYear < x.Fnacimiento.DayOfYear) { CantAños = CantAños - 1; }
-            if (CantAños < 6) { P_edad = 8; }
-            else if (CantAños < 18) { P_edad = 5; }
-            else if (CantAños < 50) { P_edad = 3; }
+            int edad = x.Fnacimiento;
+            if(edad < 6) { P_edad = 8;  }
+            else if (edad < 18) { P_edad = 5; }
+            else if (edad < 50) { P_edad = 3; }
             else { P_edad = 10; }
             return P_edad;
+
         }
 
         // Suma total de prioridad del paciente

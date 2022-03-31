@@ -16,29 +16,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" name="_nombre" class="form-control" />
+                <input asp-for="Nombre" name="nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Apellido" class="control-label"></label>
-                <input asp-for="Apellido" name="_apellido" class="form-control" />
+                <input asp-for="Apellido" name="apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fnacimiento" class="control-label"></label>
-                <input type="datetime-local" asp-for="Fnacimiento" name="_nacimiento" class="form-control" />
+                <input type="number" asp-for="Fnacimiento" name="fecha" class="form-control" />
                 <span asp-validation-for="Fnacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sexo" class="control-label"></label>
-                <select asp-for="Sexo" name="_sexo" class="form-control">
+                <select asp-for="Sexo" name="sexo" class="form-control">
                     <option value="Masculino">Hombre</option>
                     <option value="Femenino">Mujer</option>
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="Especialidad" class="control-label"></label>
-                <select asp-for="Especialidad" name="_especialidad" class="form-control">
+                <select asp-for="Especialidad" name="especialidad" class="form-control">
                     <option value="Traumatologia (interna)">Traumatologia (interna)</option>
                     <option value="Traumatologia (externa)">Traumatologia (externa)</option>
                     <option value="Ginecologia">Ginecologia</option>
@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Ingreso" class="control-label"></label>
-                <select asp-for="Ingreso" name="_ingreso" class="form-control">
+                <select asp-for="Ingreso" name="ingreso" class="form-control">
                     <option value="Ambulancia"> Por ambulancia</option>
                     <option value="Asistido">Asistido</option>
                 </select>
@@ -68,3 +68,6 @@
     <a asp-action="Index">Cancelar registro</a>
 </div>
 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

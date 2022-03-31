@@ -15,7 +15,7 @@ namespace Lab4_Hans_Sempe_1083920.Models
         // obtiene y define el apellido del paciente
         public String Apellido { get; set; }
         // obtiene y define la fecha de nacimiento del cliente
-        public DateTime Fnacimiento { get; set; }
+        public int Fnacimiento { get; set; }
         // obtiene y define el sexo (masculino o femenino) del paciente 
         public int Sexo { get; set; }
         // obtiene y define por cual medio ingreso el cliente 
@@ -23,7 +23,7 @@ namespace Lab4_Hans_Sempe_1083920.Models
         // obtiene y define en que se especializa el cliente
         public int Especialidad { get; set; }
 
-        public Pacientes(String name, String lastname, DateTime nacimiento, int sexo, int ingreso, int especialidad)
+        public Pacientes(String name, String lastname, int nacimiento, int sexo, int ingreso, int especialidad)
         {
             this.Nombre = name;
             this.Apellido = lastname;
