@@ -3,6 +3,42 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4"><u>Hospital Nacional</u></h1>
+    <br />
+    <h1 class="display-4">Regristo de atencion al cliente</h1>
+   
 </div>
+
+<html>
+<body>
+    <table class="table table-border">
+        <thead>
+            <tr>
+                <td style="text-align:center">
+                    <div class="col-md border border-dark cointener bg-info">
+                        <div>
+                            <br></br>
+                            <label class="text-white"><H2>Registrar paciente</H2></label>
+                            <br></br>
+                            <a class="button text-white btn btn-success" asp-action="RecibirUnPaciente">Registrar aqui</a>
+                            <br></br>
+                        </div>
+                    </div>
+                </td>
+                <td style="text-align:center">
+                    <div class="col-md border border-dark cointener bg-info">
+                        <div>
+                            <br></br>
+                            <label class="text-white"><H2>Ver cola de espera</H2></label>                           
+                            <br></br>
+                            <a class="button text-white btn btn-success"  asp-action="MostrarColaPacientes">Ver aqui</a>                  
+                            <br></br>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </thead>
+    </table>
+
+</body>
+</html>

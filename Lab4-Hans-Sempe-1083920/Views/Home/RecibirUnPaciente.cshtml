@@ -1,0 +1,73 @@
+﻿@model Lab4_Hans_Sempe_1083920.Models.Pacientes
+
+@{
+    ViewData["Title"] = "RecibirUnPaciente";
+}
+
+<div class="text-center">
+    <h1><u>Ingrese todos los datos que se le solicitan</u></h1>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="GuardarPacienteEnCola">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" name="nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" name="apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input type="number" asp-for="Edad" name="edad" class="form-control" />
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexo" class="control-label"></label>
+                <select asp-for="Sexo" name="sexo" class="form-control">
+                    <option value="Masculino">Hombre</option>
+                    <option value="Femenino">Mujer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Especialidad" class="control-label"></label>
+                <select asp-for="Especialidad" name="especialidad" class="form-control">
+                    <option value="Traumatologia (interna)">Traumatologia (interna)</option>
+                    <option value="Traumatologia (externa)">Traumatologia (externa)</option>
+                    <option value="Ginecologia">Ginecologia</option>
+                    <option value="Cardiogia">Cardiogia</option>
+                    <option value="Neumologia">Neumologia</option>
+                </select>
+                <span asp-validation-for="Especialidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingreso" class="control-label"></label>
+                <select asp-for="Ingreso" name="ingreso" class="form-control">
+                    <option value="Ambulancia"> Por ambulancia</option>
+                    <option value="Asistido">Asistido</option>
+                </select>
+                <span asp-validation-for="Ingreso" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="text-center">
+                    <input type="submit" value="Ingresar paciente" class="button text-white btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-right">
+    <a asp-action="Index">Cancelar registro</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
