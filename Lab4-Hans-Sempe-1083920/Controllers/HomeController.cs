@@ -14,7 +14,7 @@ namespace Lab4_Hans_Sempe_1083920.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private static HEAPTree<int, Pacientes> ColaDeEspera = new HEAPTree<int, Pacientes>(new Models.Prioridad().Compare, new Models.Prioridad().CalcularPrioridad);
+        private static HEAPTree<int, Pacientes> ColaDeEspera = new HEAPTree<int, Pacientes>(new Models.Prioridad().Compare, new Models.Prioridad().CalculoDePrioridad);
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -41,17 +41,15 @@ namespace Lab4_Hans_Sempe_1083920.Controllers
 
         public IActionResult RecibirUnPaciente() { return View(); }
 
-        public IActionResult GuardarPacienteEnCola (String nombre, String apellido, int fecha, int sexo, int especialidad, int ingreso)
+        public IActionResult GuardarPacienteEnCola (String nombre, String apellido, int edad, String sexo, String especialidad, String ingreso)
         {
-            Pacientes nuevoPaciente = new Pacientes(nombre, apellido, fecha, sexo, especialidad, ingreso);
+            Pacientes nuevoPaciente = new Pacientes(nombre, apellido, edad, sexo, especialidad, ingreso);
             ColaDeEspera.Insertar(nuevoPaciente);
             return View();
         }
 
-        public IActionResult MostrarColaPacientes (int eliminacion)
-        {
-            if ( eliminacion != 0) { ColaDeEspera.Eliminar(); }
-            ViewData["pacientes"] = ColaDeEspera.treeToList();
+        public IActionResult MostrarColaPacientes ()
+        { 
             return View();
         }
 
