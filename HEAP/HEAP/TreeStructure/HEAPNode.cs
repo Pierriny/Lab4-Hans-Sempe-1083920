@@ -4,6 +4,7 @@ using System.Text;
 
 namespace HEAP.TreeStructure
 {
+    // Estructura del Nodo HEAP
     public class HEAPNode<P, V>
     {
         public P Prioridad { get; set; }

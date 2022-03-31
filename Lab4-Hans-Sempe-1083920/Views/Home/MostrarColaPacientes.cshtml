@@ -1,0 +1,57 @@
+﻿@model Lab4_Hans_Sempe_1083920.Models.Pacientes
+
+@{
+    ViewData["Title"] = "MostrarColaPacientes";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><u>Cola de espera</u></h1>
+    <br />
+    <H3>
+        Lista de pacientes en espera, ordenada segun el nivel de prioridad que se halla registrado con el paciente
+    </H3>
+    <H6>
+        (El nivel de prioridad de cada paciente se calcula segun criterios propios del hospital)
+    </H6>
+</div>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nivel-Prioridad</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Sexo</th>
+            <th>Especialidad</th>
+            <th>Metodo de Ingreso</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["Pacientes"] as List<HEAP.TreeStructure.HEAPNode<int, Pacientes>>)
+        {
+            <tr>
+                <td>@item.Prioridad</td>
+                <td>@item.Valor.Nombre</td>
+                <td>@item.Valor.Apellido</td>
+                <td>@item.Valor.Fnacimiento</td>
+                <td>@item.Valor.Sexo</td>
+                <td>@item.Valor.Especialidad</td>
+                <td>@item.Valor.Ingreso</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+<div class="text-center">
+
+    <a class="button text-white btn btn-success" asp-action="MostrarColaPacientes" asp-route-borrar="1">Actualizar cola de espera</a>
+
+</div>

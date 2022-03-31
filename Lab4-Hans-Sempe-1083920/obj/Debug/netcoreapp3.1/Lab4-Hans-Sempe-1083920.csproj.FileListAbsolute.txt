@@ -112,3 +112,5 @@ C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-S
 C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\Lab4-Hans-Sempe-1083920\obj\Debug\netcoreapp3.1\Lab4-Hans-Sempe-1083920.pdb
 C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\Lab4-Hans-Sempe-1083920\obj\Debug\netcoreapp3.1\Lab4-Hans-Sempe-1083920.genruntimeconfig.cache
 C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\Lab4-Hans-Sempe-1083920\obj\Debug\netcoreapp3.1\Razor\Views\Home\RecibirUnPaciente.cshtml.g.cs
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\Lab4-Hans-Sempe-1083920\obj\Debug\netcoreapp3.1\Razor\Views\Home\GuardarPacienteEnCola.cshtml.g.cs
+C:\Users\hanse\Documents\2022PrimerCiclo\EstructuraDeDatos\Lab\Lab04\Lab4-Hans-Sempe-1083920\Lab4-Hans-Sempe-1083920\obj\Debug\netcoreapp3.1\Razor\Views\Home\MostrarColaPacientes.cshtml.g.cs
